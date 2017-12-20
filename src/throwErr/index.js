@@ -1,6 +1,6 @@
 // @flow
 
-export default (error?: Object | string) => {
+module.exports = (error?: Object | string) => {
   if (error instanceof Error) {
     throw error
   }

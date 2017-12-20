@@ -5,7 +5,7 @@ import isEqual from 'lodash.isequal'
 
 import cond from '../cond'
 
-export default (val: any, cases: any[][], defaultVal?: any) =>
+module.exports = (val: any, cases: any[][], defaultVal?: any) =>
   cond(
     cases.map(c => {
       const newCase = cloneDeep(c)

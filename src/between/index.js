@@ -2,9 +2,14 @@
 
 import cond from '../cond'
 
-module.exports = (leftValue: number, middleValue: number, rightValue: number, options?: Object) => {
-  if (!leftValue || !middleValue || !rightValue) {
-    throw Error('`between` takes at least 3 numbers as arguments.')
+module.exports = function between(
+  leftValue: number,
+  middleValue: number,
+  rightValue: number,
+  options?: Object,
+) {
+  if (arguments.length < 3 || arguments.length > 4) {
+    throw Error('`between` takes 3 numbers as arguments.')
   }
 
   return leftValue <= rightValue

@@ -15,18 +15,18 @@ module.exports = function between(
   return leftValue <= rightValue
     ? cond(
         [
-          [options && options.leftOrEqual, leftValue <= middleValue && middleValue < rightValue],
-          [options && options.rightOrEqual, leftValue < middleValue && middleValue <= rightValue],
-          [options && options.orEqual, leftValue <= middleValue && middleValue <= rightValue],
+          [options && options.leftOrEqual, () => leftValue <= middleValue && middleValue < rightValue],
+          [options && options.rightOrEqual, () => leftValue < middleValue && middleValue <= rightValue],
+          [options && options.orEqual, () => leftValue <= middleValue && middleValue <= rightValue],
         ],
-        leftValue < middleValue && middleValue < rightValue,
+        () => leftValue < middleValue && middleValue < rightValue,
       )
     : cond(
         [
-          [options && options.leftOrEqual, leftValue >= middleValue && middleValue > rightValue],
-          [options && options.rightOrEqual, leftValue > middleValue && middleValue >= rightValue],
-          [options && options.orEqual, leftValue >= middleValue && middleValue >= rightValue],
+          [options && options.leftOrEqual, () => leftValue >= middleValue && middleValue > rightValue],
+          [options && options.rightOrEqual, () => leftValue > middleValue && middleValue >= rightValue],
+          [options && options.orEqual, () => leftValue >= middleValue && middleValue >= rightValue],
         ],
-        leftValue > middleValue && middleValue > rightValue,
+        () => leftValue > middleValue && middleValue > rightValue,
       )
 }

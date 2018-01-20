@@ -4,4 +4,5 @@ module.exports = {
   swit: require('./lib/swit'),
   throwErr: require('./lib/throwErr'),
   tryCatch: require('./lib/tryCatch'),
+  run: require('./lib/run'),
 }

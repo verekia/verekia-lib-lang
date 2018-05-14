@@ -1,4 +1,5 @@
 module.exports = {
+  arr: require('./lib/arr'),
   between: require('./lib/between'),
   cond: require('./lib/cond'),
   swit: require('./lib/swit'),

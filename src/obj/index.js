@@ -10,7 +10,7 @@ module.exports = function obj(prm?: Object) {
   if (Array.isArray(prm)) {
     throw Error('`obj` cannot transform arrays.')
   }
-  if (prm instanceof Object) {
+  if (typeof prm === 'object') {
     return prm
   }
   throw Error('Invalid parameter given to `obj`')
